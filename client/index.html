@@ -9,12 +9,21 @@ To begin with it has nothing to do with archaism, with the salvaging of obsolete
 
 It has nothing to do with correct grammar and syntax,which are of no importance so long as one makes one's meaning clear, or with the avoidance of Americanisms, or with having what is called a "good prose style."
 
-{# START MID AD SLOT
-    You can move this wherever it works best in your page's design.
-    For more control over the size, write your own o-ads div - see
-    https://financial-times.github.io/o-ads/docs/developer-guide/display #}
-{% if ads %}{{ macros.middleAd() }}{% endif %}
-{# END MID AD SLOT #}
+{% endmarkdown %}
+
+<div class="o-grid-container">
+	<div class="o-grid-row">
+	    <div data-o-grid-colspan="12">
+	        <div class="o-typography-lead">Minimum and maximum ranges of North Korea's most powerful missiles</div>
+	        <!-- <div class="o-typography-lead--small">Estimated minimum and maximum reach in km</div> -->
+				<div data-o-grid-colspan="S12 M12 L6 XL6" id='kn-08'></div>
+				<div data-o-grid-colspan="S12 M12 L6 XL6" id='taeopodong-2'></div>
+			<div class="ft-source">Source: CSIS, FT research</div>
+	   	</div>
+	</div>
+</div>
+
+{% markdown %}
 
 On the other hand, it is not concerned with fake simplicity and
 the attempt to make written English colloquial. Nor does it even imply in every
@@ -64,6 +73,15 @@ language, and that one can probably bring about some improvement by starting at
 the verbal end. If you simplify your English, you are freed from the worst
 follies of orthodoxy. You cannot speak any of the necessary dialects, and when
 you make a stupid remark its stupidity will be obvious, even to yourself.
+
+{# START MID AD SLOT
+    You can move this wherever it works best in your page's design.
+    For more control over the size, write your own o-ads div - see
+    https://financial-times.github.io/o-ads/docs/developer-guide/display #}
+{% if ads %}{{ macros.middleAd() }}{% endif %}
+{# END MID AD SLOT #}
+
+
 Political language -- and with variations this is true of all political
 parties, from Conservatives to Anarchists -- is designed to make lies sound
 truthful and murder respectable, and to give an appearance of solidity to pure

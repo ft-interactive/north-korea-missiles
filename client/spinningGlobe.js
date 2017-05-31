@@ -1,13 +1,13 @@
 const config = {
   KN08: {
     selectorId: '#kn-08',
-    globeName: 'KN-08',
+    globeName: 'kn-08',
     minDistance: 48,
     maxDistance: 105,
   },
   Taepodong2: {
     selectorId: '#taeopodong-2',
-    globeName: 'Taeopodong-2',
+    globeName: 'taeopodong-2',
     minDistance: 40,
     maxDistance: 120,
   },
@@ -17,9 +17,12 @@ import * as d3 from 'd3';
 
 function spinDatGlobe(config) {
 
+
+  console.log(config)
+
   // const width = d3.select(config.selectorId).node().offsetWidth;
-  const width = 300;
-  const height = 320;
+  const width = 600;
+  const height = 400;
 
 
   // Configuration for the spinning effect
@@ -33,42 +36,36 @@ function spinDatGlobe(config) {
           country: 'United_Kingdom',
           label: 'London',
           city: 'London',
-          yLocation: -5,
         },
         {
           coordinates: [-74.0059, 40.7128],
           country: 'United_States_of_America',
           label: 'New York City',
           city: 'New_York_City',
-          yLocation: -5,
         },
         {
           coordinates: [-122.4194, 37.7749],
           country: 'United_States_of_America',
           label: 'San Francisco',
           city: 'San_Francisco',
-          yLocation: 15,
         },
          {
           coordinates: [125.7625, 39.0392],
           country: 'North_Korea',
           label: 'Pyongyang',
           city: 'Pyongyang',
-          yLocation: -5,
         },
         {
           coordinates: [151.2093, -33.8688],
           country: 'Australia',
           label: 'Sydney',
           city: 'Sydney',
-          yLocation: -5,
         },
         {
           coordinates: [-46.6333, -23.5505],
           country: 'Brazil',
           label: 'Sao Paolo',
           city: 'Sao_Paolo',
-          yLocation: -5,
         },
   ];
 
@@ -78,7 +75,7 @@ function spinDatGlobe(config) {
 
   // set projection type and paremetes
   const projection = d3.geoOrthographic()
-     .scale(120)
+     .scale(200)
      .translate([(width / 2), height / 2])
      .clipAngle(90)
      .precision(0.3);
@@ -94,6 +91,8 @@ function spinDatGlobe(config) {
     .append('svg')
     .attr('width', width)
     .attr('height', height);
+
+    console.log(d3.select(config.selectorId).node())
 
   const g = svg.append("g");
 
@@ -121,12 +120,6 @@ function spinDatGlobe(config) {
      .attr("class", "sphere")
      .attr("d", path)
      .attr("fill", "#f1f6f8");
-
-  g.append("text")
-    .attr('x',5)
-    .attr('y',25)
-    .attr('class','missile-name-text')
-    .text(config.globeName);
 
   d3.json('http://mbostock.github.io/d3/talk/20111018/world-countries.json', function (error, collection) {
         svg.selectAll('path')
@@ -175,7 +168,7 @@ function spinDatGlobe(config) {
     .enter()
     .append("text")
     .attr("class", "label")
-    .attr('y', function(d) {return d.yLocation})
+    .attr('y', -5)
     .text(function(d) { return d.label })
     .style("text-anchor","middle");
 
