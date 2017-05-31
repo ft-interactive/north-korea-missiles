@@ -11,15 +11,15 @@ export default () => ({ // eslint-disable-line
   //       new Date('2016-05-17T17:11:22Z')
   publishedDate: new Date(),
 
-  headline: 'Politics and the English Language',
+  headline: 'North Korea missiles',
 
   // summary === standfirst (Summary is what the content API calls it)
   summary: 'Political language is designed to make lies sound truthful' +
            'and murder respectable, and to give an appearance of solidity to pure wind',
 
   topic: {
-    name: 'Starter Kit',
-    url: '/foo',
+    name: 'Asia Pacific',
+    url: 'https://www.ft.com/world/asia-pacific',
   },
 
   relatedArticle: {
@@ -39,12 +39,13 @@ export default () => ({ // eslint-disable-line
   // Byline can by a plain string, markdown, or array of authors
   // if array of authors, url is optional
   byline: [
-    { name: 'Author One', url: '/foo/bar' },
-    { name: 'Author Two' },
+    { name: 'Bryan Harris', url: 'https://www.ft.com/stream/authorsId/Q0ItQkg2Nzg5MA==-QXV0aG9ycw==' },
+    { name: 'Ian Bott', url: 'https://www.ft.com/stream/authorsId/ODExZWY1ZWItNzFhNy00NzdmLWE1OWEtNzYxZjcyMTkxYmNj-QXV0aG9ycw=='},
+    { name: 'Jane Pong', url: 'https://www.ft.com/stream/authorsId/YWMxN2YzMGMtMmE4Zi00ZjNmLTliMjQtYmI4ZGU1ZDkxZjBh-QXV0aG9ycw=='},
   ],
 
   // Appears in the HTML <title>
-  title: '',
+  title: 'North Korea missiles',
 
   // meta data
   description: '',
