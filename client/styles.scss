@@ -2,16 +2,23 @@
 @import 'o-grid/main';
 @import 'components/core/main';
 
-/*
-      TODO: delete this comment
-
-      Write your code here - keep it neat!
-      Split logical parts of you project into components e.g.
-
-      /client
-        - /components
-            - /component-name
-                - styles.scss
-                - index.js
-                - template.html
-*/
+.land {
+  stroke: #9f9d88;
+  stroke-width: 0.7px;
+  cursor: pointer;
+}
+.missile-range {
+	cursor: pointer;
+}
+.point {
+	fill: black;
+	stroke: black;
+}
+.city-labels {
+	fill: #6b6e68;
+}
+.missile-name-text {
+	font-size: 20px;
+	font-weight: 400;
+	fill: #6b6e68;
+}
