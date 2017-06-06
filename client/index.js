@@ -28,7 +28,7 @@ function spinDatGlobe(config) {
   const pyongyang = [125.7625, 39.0392];
   const cities = [
       {
-          coordinates: [.1, 90],
+          coordinates: [0, 90],
           country: 'North_pole',
           label: 'North_pole',
           city: 'North_pole',
@@ -99,7 +99,8 @@ function spinDatGlobe(config) {
   const svg = d3.select(config.selectorId)
     .append('svg')
     .attr('width', width)
-    .attr('height', height);
+    .attr('height', height)
+    .attr('class', 'globe-svg');
 
   const g = svg.append("g");
 
