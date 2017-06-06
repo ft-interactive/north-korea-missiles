@@ -28,10 +28,10 @@ function spinDatGlobe(config) {
   const pyongyang = [125.7625, 39.0392];
   const cities = [
       {
-          coordinates: [0, 90],
-          country: 'North_pole',
-          label: 'North_pole',
-          city: 'North_pole',
+          coordinates: [-1.1278, 51.5074],
+          country: '',
+          label: '',
+          city: '',
           yLocation: -5,
         },
       {
