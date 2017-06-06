@@ -87,6 +87,7 @@
     "start": "nodemon --watch gulpfile.babel.js --exec 'gulp watch'"
   },
   "dependencies": {
+    "bertha-client": "^2.1.0",
     "d3": "^4.9.1"
   }
 }

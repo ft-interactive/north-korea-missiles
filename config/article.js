@@ -23,8 +23,10 @@ export default () => ({ // eslint-disable-line
   },
 
   relatedArticle: {
-    text: 'Related article »',
-    url: 'https://en.wikipedia.org/wiki/Politics_and_the_English_Language',
+    text: '',
+    url: '',
+    // text: 'Related article »',
+    // url: 'https://en.wikipedia.org/wiki/Politics_and_the_English_Language',
   },
 
   mainImage: {
@@ -42,6 +44,7 @@ export default () => ({ // eslint-disable-line
     { name: 'Bryan Harris', url: 'https://www.ft.com/stream/authorsId/Q0ItQkg2Nzg5MA==-QXV0aG9ycw==' },
     { name: 'Ian Bott', url: 'https://www.ft.com/stream/authorsId/ODExZWY1ZWItNzFhNy00NzdmLWE1OWEtNzYxZjcyMTkxYmNj-QXV0aG9ycw=='},
     { name: 'Jane Pong', url: 'https://www.ft.com/stream/authorsId/YWMxN2YzMGMtMmE4Zi00ZjNmLTliMjQtYmI4ZGU1ZDkxZjBh-QXV0aG9ycw=='},
+    { name: 'Lauren Leatherby', url: 'https://www.ft.com/lauren-leatherby'}
   ],
 
   // Appears in the HTML <title>
