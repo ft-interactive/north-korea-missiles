@@ -2,14 +2,14 @@ const config = {
   KN08: {
     selectorId: '#kn-08',
     globeName: 'KN-08',
-    minDistance: 48,
-    maxDistance: 105,
+    minDistance: 5500,
+    maxDistance: 11500,
   },
   Taepodong2: {
     selectorId: '#taeopodong-2',
     globeName: 'Taeopodong-2',
-    minDistance: 40,
-    maxDistance: 120,
+    minDistance: 4000,
+    maxDistance: 15000,
   },
 };
 
@@ -145,7 +145,7 @@ function spinDatGlobe(config) {
   svg.append("g")
       .attr("class", "missile-range")
     .selectAll("path")
-      .data(d3.range(0, config.minDistance, config.minDistance-1))
+      .data(d3.range(0, ((config.minDistance/6371)*(180/Math.PI)), ((config.minDistance/6371)*(180/Math.PI))-1))
     .enter().append("path")
       .attr("d", function(r) { return path(circle.center(pyongyang).radius(r)()); })
       .attr('class', 'range');
@@ -153,7 +153,7 @@ function spinDatGlobe(config) {
    svg.append("g")
       .attr("class", "missile-range")
     .selectAll("path")
-      .data(d3.range(0, config.maxDistance, config.maxDistance-1))
+      .data(d3.range(0, ((config.maxDistance/6371)*(180/Math.PI)), ((config.maxDistance/6371)*(180/Math.PI))-1))
     .enter().append("path")
       .attr("d", function(r) { return path(circle.center(pyongyang).radius(r)()); })
       .attr('class', 'range');
