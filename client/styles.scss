@@ -3,11 +3,13 @@
 @import 'components/core/main';
 
 .land {
-  stroke: #9f9d88;
-  stroke-width: 0.7px;
+  stroke: #ffffff;
+  stroke-width: 0.5px;
   cursor: pointer;
 }
 .missile-range {
+	fill: #ef987e;
+	mix-blend-mode: multiply;
 	cursor: pointer;
 }
 .point {
@@ -15,7 +17,17 @@
 	stroke: black;
 }
 .missile-name-text {
-	font-size: 20px;
-	font-weight: 400;
+	font-size: 21px;
+	font-weight: 700;
 	fill: #6b6e68;
+}
+#globe-div {
+	display: block;
+}
+.label {
+	fill: black;
+	cursor: pointer;
+}
+.sphere {
+	cursor: pointer;
 }

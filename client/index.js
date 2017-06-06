@@ -17,7 +17,6 @@ import * as d3 from 'd3';
 
 function spinDatGlobe(config) {
 
-  // const width = d3.select(config.selectorId).node().offsetWidth;
   const width = 300;
   const height = 320;
 
@@ -127,7 +126,7 @@ function spinDatGlobe(config) {
      .datum({ type: "Sphere" })
      .attr("class", "sphere")
      .attr("d", path)
-     .attr("fill", "#f1f6f8");
+     .attr("fill", "#ffffff");
 
   g.append("text")
     .attr('x',5)
@@ -140,7 +139,7 @@ function spinDatGlobe(config) {
             .data(collection.features)
             .enter().append('path')
             .attr('class', 'land')
-            .attr('fill','#eeece1')
+            .attr('fill','#b2b2b2')
             .attr('id', function(d) { return d.properties.name.split(' ').join('_'); });
 
   svg.append("g")
@@ -149,9 +148,6 @@ function spinDatGlobe(config) {
       .data(d3.range(0, config.minDistance, config.minDistance-1))
     .enter().append("path")
       .attr("d", function(r) { return path(circle.center(pyongyang).radius(r)()); })
-      // .attr('stroke', '#ea5836')
-      .attr('fill', '#ea5836')
-      .attr('fill-opacity', .4)
       .attr('class', 'range');
 
    svg.append("g")
@@ -160,9 +156,6 @@ function spinDatGlobe(config) {
       .data(d3.range(0, config.maxDistance, config.maxDistance-1))
     .enter().append("path")
       .attr("d", function(r) { return path(circle.center(pyongyang).radius(r)()); })
-      // .attr('stroke', '#ea5836')
-      .attr('fill', '#ea5836')
-      .attr('fill-opacity', .4)
       .attr('class', 'range');
 
   svg.append('g')
