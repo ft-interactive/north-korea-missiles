@@ -2,14 +2,14 @@ const config = {
   KN08: {
     selectorId: '#kn-08',
     globeName: 'KN-08',
-    minDistance: 48,
-    maxDistance: 105,
+    minDistance: 5500,
+    maxDistance: 11500,
   },
   Taepodong2: {
     selectorId: '#taeopodong-2',
     globeName: 'Taeopodong-2',
-    minDistance: 40,
-    maxDistance: 120,
+    minDistance: 4000,
+    maxDistance: 15000,
   },
 };
 
@@ -17,7 +17,6 @@ import * as d3 from 'd3';
 
 function spinDatGlobe(config) {
 
-  // const width = d3.select(config.selectorId).node().offsetWidth;
   const width = 300;
   const height = 320;
 
@@ -29,10 +28,10 @@ function spinDatGlobe(config) {
   const pyongyang = [125.7625, 39.0392];
   const cities = [
       {
-          coordinates: [.1, 90],
-          country: 'North_pole',
-          label: 'North_pole',
-          city: 'North_pole',
+          coordinates: [-1.1278, 51.5074],
+          country: '',
+          label: '',
+          city: '',
           yLocation: -5,
         },
       {
@@ -100,7 +99,8 @@ function spinDatGlobe(config) {
   const svg = d3.select(config.selectorId)
     .append('svg')
     .attr('width', width)
-    .attr('height', height);
+    .attr('height', height)
+    .attr('class', 'globe-svg');
 
   const g = svg.append("g");
 
@@ -127,7 +127,7 @@ function spinDatGlobe(config) {
      .datum({ type: "Sphere" })
      .attr("class", "sphere")
      .attr("d", path)
-     .attr("fill", "#f1f6f8");
+     .attr("fill", "#ffffff");
 
   g.append("text")
     .attr('x',5)
@@ -140,29 +140,23 @@ function spinDatGlobe(config) {
             .data(collection.features)
             .enter().append('path')
             .attr('class', 'land')
-            .attr('fill','#eeece1')
+            .attr('fill','#b2b2b2')
             .attr('id', function(d) { return d.properties.name.split(' ').join('_'); });
 
   svg.append("g")
       .attr("class", "missile-range")
     .selectAll("path")
-      .data(d3.range(0, config.minDistance, config.minDistance-1))
+      .data(d3.range(0, ((config.minDistance/6371)*(180/Math.PI)), ((config.minDistance/6371)*(180/Math.PI))-1))
     .enter().append("path")
       .attr("d", function(r) { return path(circle.center(pyongyang).radius(r)()); })
-      // .attr('stroke', '#ea5836')
-      .attr('fill', '#ea5836')
-      .attr('fill-opacity', .4)
       .attr('class', 'range');
 
    svg.append("g")
       .attr("class", "missile-range")
     .selectAll("path")
-      .data(d3.range(0, config.maxDistance, config.maxDistance-1))
+      .data(d3.range(0, ((config.maxDistance/6371)*(180/Math.PI)), ((config.maxDistance/6371)*(180/Math.PI))-1))
     .enter().append("path")
       .attr("d", function(r) { return path(circle.center(pyongyang).radius(r)()); })
-      // .attr('stroke', '#ea5836')
-      .attr('fill', '#ea5836')
-      .attr('fill-opacity', .4)
       .attr('class', 'range');
 
   svg.append('g')
