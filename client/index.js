@@ -8,7 +8,7 @@ const config = {
   },
   Taepodong2: {
     selectorId: '#taeopodong-2',
-    globeName: 'Taeopodong-2',
+    globeName: 'Taepodong-2',
     subhed: '(operational)',
     minDistance: 4000,
     maxDistance: 15000,
