@@ -23,6 +23,12 @@
 
     <main role="main">
       <article class="article" itemscope itemtype="http://schema.org/Article">
+        {% if mainImage.url %}
+        <div class="topper">
+          <img alt="" src="{{ mainImage.url | imageServiceURL }}" srcset="{{ mainImage.url | imageServiceURL({width: 320}) }} 320w, {{ mainImage.url | imageServiceURL({width: 640}) }} 640w, {{ mainImage.url | imageServiceURL({width: 1220}) }} 1220w, {{ mainImage.url | imageServiceURL({width: 2048}) }} 2048w">
+        </div>
+        {% endif %}
+
         <div class="article-head o-grid-container">
           <div class="o-grid-row">
             <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">

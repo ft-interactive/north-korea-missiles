@@ -98,3 +98,15 @@ export function spoorTrackingPixel(str) {
   <noscript data-o-component="o-tracking">${img}</noscript>`,
   );
 }
+
+export function imageServiceURL(originalURL, options = {}) {
+  const params = Object.assign({
+    source: 'ig',
+  }, options);
+
+  const queryString = Object.keys(params)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    .join('&');
+
+  return `https://www.ft.com/__origami/service/image/v2/images/raw/${originalURL}?${queryString}`;
+}
