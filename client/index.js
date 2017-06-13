@@ -179,13 +179,14 @@ function spinDatGlobe(config) {
       .attr('class', 'city-labels')
 
 
-  var label = svg.selectAll("text")
+  svg.selectAll('.point')
     .data(cities)
-    .enter()
-    .append("text")
+    .enter().append("text")
     .attr("class", "label")
-    .attr('y', function(d) {return d.yLocation})
-    .text(function(d) { return d.label })
+    .attr('y', function(d) {return d.yLocation })
+    .text(function(d) { 
+      console.log(cities[0].label)
+      return d.label })
     .style("text-anchor","middle");
 
        svg.on('mousedown', function () {
