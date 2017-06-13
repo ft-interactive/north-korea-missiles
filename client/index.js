@@ -2,12 +2,14 @@ const config = {
   KN08: {
     selectorId: '#kn-08',
     globeName: 'KN-08',
+    subhed: '(in development)',
     minDistance: 5500,
     maxDistance: 11500,
   },
   Taepodong2: {
     selectorId: '#taeopodong-2',
     globeName: 'Taeopodong-2',
+    subhed: '(operational)',
     minDistance: 4000,
     maxDistance: 15000,
   },
@@ -18,7 +20,7 @@ import * as d3 from 'd3';
 function spinDatGlobe(config) {
 
   const width = 300;
-  const height = 320;
+  const height = 330;
 
 
   // Configuration for the spinning effect
@@ -85,7 +87,7 @@ function spinDatGlobe(config) {
   // set projection type and paremetes
   const projection = d3.geoOrthographic()
      .scale(120)
-     .translate([(width / 2), height / 2])
+     .translate([(width / 2), (height / 2)+20])
      .clipAngle(90)
      .precision(0.3);
 
@@ -134,6 +136,12 @@ function spinDatGlobe(config) {
     .attr('y',25)
     .attr('class','missile-name-text')
     .text(config.globeName);
+
+  g.append("text")
+    .attr('x',5)
+    .attr('y',42)
+    .attr('class','subhed-text')
+    .text(config.subhed);
 
   d3.json('http://mbostock.github.io/d3/talk/20111018/world-countries.json', function (error, collection) {
         svg.selectAll('path')
