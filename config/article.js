@@ -9,13 +9,12 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2017-06-12T05:00:00Z'),
+  publishedDate: new Date('2017-06-15T05:00:00Z'),
 
-  headline: 'North Korea missiles',
+  headline: 'North Korea: A rising threat',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'Political language is designed to make lies sound truthful' +
-           'and murder respectable, and to give an appearance of solidity to pure wind',
+  summary: "Pyongyang's development of missiles and nuclear weapons rings alarms in Washington",
 
   topic: {
     name: 'Asia Pacific',
