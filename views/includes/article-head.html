@@ -4,23 +4,13 @@
 
 <h1 class="o-typography-heading1" itemprop="headline">{{ headline | md(true) }}</h1>
 
-<p>
+<p class="standfirst">
   {{ summary | md(true) }}
   {% if relatedArticle %}
   <a href="{{ relatedArticle.url }}" class="o-typography-link">{{ relatedArticle.text }}</a>
   {% endif %}
 </p>
 <meta itemprop="dateModified" content="{{ publishedDate | isotime }}">
-
-{% if mainImage.url %}
-<figure class="graphic graphic-b-1 graphic-pad-1">
-  <img alt="" src="{{ mainImage.url }}"></img>
-    <figcaption class="o-typography-caption">
-     {{mainImage.description}}
-     &#xA9;{{mainImage.credit}}
-  </figcaption>
-</figure>
-{% endif %}
 
 {% if flags.shareButtons %}
   {% include "includes/share.html" %}

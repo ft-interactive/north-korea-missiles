@@ -32,7 +32,7 @@ export default () => ({ // eslint-disable-line
     title: '',
     description: '',
     credit: '',
-    url: './images/NKMissilesMas.jpg',
+    url: 'http://ft-ig-images-prod.s3-website-eu-west-1.amazonaws.com/v1/8502626190-ua6uo.jpg',
     width: 2048, // ensure correct width
     height: 1152, // ensure correct height
   },
