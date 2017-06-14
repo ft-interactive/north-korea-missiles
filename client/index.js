@@ -94,6 +94,7 @@ function spinDatGlobe(config) {
   // create path variable, empty svg element and group container
   const path = d3.geoPath()
      .projection(projection);
+
   const circle = d3.geoCircle();
 
   document.querySelector(config.selectorId).innerHTML = '';
@@ -102,7 +103,8 @@ function spinDatGlobe(config) {
     .append('svg')
     .attr('width', width)
     .attr('height', height)
-    .attr('class', 'globe-svg');
+    .attr('class', 'globe-svg')
+    .attr('id', 'globe-'+ config.globeName);
 
   const g = svg.append("g");
 
@@ -185,31 +187,31 @@ function spinDatGlobe(config) {
     .attr("class", "label")
     .attr('y', function(d) {return d.yLocation })
     .text(function(d) { 
-      console.log(cities[0].label)
       return d.label })
     .style("text-anchor","middle");
 
-       svg.on('mousedown', function () {
-              isMouseDown = d3.mouse(this);
-              originalProjection = projection.rotate();
-              t.stop();
-              })
-            .on('mouseup', function () {
-              isMouseDown = false;
-              originalProjection = false;
-            })
-            .on('mousemove', function () {
-                if (isMouseDown) {
-                  var p = d3.mouse(this);
-                  var x = originalProjection[0] + rotationFactor * (p[0] - isMouseDown[0]);
-                  var y = originalProjection[1] - rotationFactor * (p[1] - isMouseDown[1]);
-                  projection.rotate([x, y]);
-                  position_labels();
-                  svg.selectAll('path.land').attr('d', path);
-                  svg.selectAll('path.city-labels').attr('d', function(r,i,d) { return path(circle.center(r.coordinates).radius(.5)()); })
-                  svg.selectAll('path.range').attr('d', function(r) { return path(circle.center(pyongyang).radius(r)()); })
-                }
-              });
+  svg.on('mousedown', function () {
+      isMouseDown = d3.mouse(this);
+      originalProjection = projection.rotate();
+      t.stop();
+      })
+    .on('mouseup', function () {
+      isMouseDown = false;
+      originalProjection = false;
+    })
+    .on('mousemove', function () {
+        if (isMouseDown) {
+          var p = d3.mouse(this);
+          var x = originalProjection[0] + rotationFactor * (p[0] - isMouseDown[0]);
+          var y = originalProjection[1] - rotationFactor * (p[1] - isMouseDown[1]);
+          projection.rotate([x, y]);
+          position_labels();
+          console.log(d3.selectAll('.globe-svg'));
+          d3.selectAll('.globe-svg path.land').attr('d', path);
+          d3.selectAll('.globe-svg path.city-labels').attr('d', function(r,i,d) { return path(circle.center(r.coordinates).radius(.5)()); })
+          d3.selectAll('.globe-svg path.range').attr('d', function(r) { return path(circle.center(pyongyang).radius(r)()); })
+        }
+      });
 
   });
 
@@ -217,7 +219,7 @@ function spinDatGlobe(config) {
   function position_labels() {
 
         //select all the labels and transform them
-        svg.selectAll(".label")
+        d3.selectAll(".globe-svg .label")
           .attr("text-anchor",function(d) {
             var x = projection(d.coordinates)[0];
             return x < width/2-20 ? "end" :
