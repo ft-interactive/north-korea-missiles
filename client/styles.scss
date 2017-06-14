@@ -5,12 +5,12 @@
 .land {
   stroke: #ffffff;
   stroke-width: 0.5px;
-  cursor: pointer;
+  cursor: move;
 }
 .missile-range {
 	fill: #ea3c13;
 	opacity: 0.5;
-	cursor: pointer;
+	cursor: move;
 }
 .point {
 	fill: black;
@@ -30,8 +30,8 @@
 }
 .label {
 	fill: black;
-	cursor: pointer;
+	cursor: move;
 }
 .sphere {
-	cursor: pointer;
+	cursor: move;
 }

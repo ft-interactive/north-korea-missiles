@@ -116,7 +116,7 @@ function spinDatGlobe(config) {
 
 
       // // update cities position = redraw
-      svg.selectAll("path.land").attr("d", path);
+      svg.selectAll('path.land').attr('d', path);
       svg.selectAll('path.city-labels').attr('d', function(r,i,d) { return path(circle.center(r.coordinates).radius(.5)()); })
       svg.selectAll('path.range').attr("d", function(r) { return path(circle.center(pyongyang).radius(r)()); });
       position_labels();
@@ -125,11 +125,11 @@ function spinDatGlobe(config) {
    // t();
 
   // draw the sphere
-  g.append("path")
-     .datum({ type: "Sphere" })
-     .attr("class", "sphere")
-     .attr("d", path)
-     .attr("fill", "#ffffff");
+  g.append('path')
+     .datum({ type: 'Sphere' })
+     .attr('class', 'sphere')
+     .attr('d', path)
+     .attr('fill', '#ffffff');
 
   g.append("text")
     .attr('x',5)
@@ -176,7 +176,7 @@ function spinDatGlobe(config) {
       .attr('d', function(d,i) { 
         return path(circle.center(d.coordinates).radius(1)()); 
       })
-      .attr('class', 'city-labels')
+      .attr('class', 'city-labels');
 
 
   svg.selectAll('.point')
@@ -192,12 +192,12 @@ function spinDatGlobe(config) {
        svg.on('mousedown', function () {
               isMouseDown = d3.mouse(this);
               originalProjection = projection.rotate();
-              t.stop()
+              t.stop();
               })
             .on('mouseup', function () {
-                isMouseDown = false;
-                originalProjection = false;
-              })
+              isMouseDown = false;
+              originalProjection = false;
+            })
             .on('mousemove', function () {
                 if (isMouseDown) {
                   var p = d3.mouse(this);
