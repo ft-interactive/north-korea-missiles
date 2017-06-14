@@ -47,10 +47,10 @@ export default () => ({ // eslint-disable-line
   ],
 
   // Appears in the HTML <title>
-  title: 'North Korea missiles',
+  title: 'North Korea: A rising threat',
 
   // meta data
-  description: '',
+  description: "Pyongyang's development of missiles and nuclear weapons rings alarms in Washington",
 
   /*
   TODO: Select Twitter card type -
@@ -73,7 +73,7 @@ export default () => ({ // eslint-disable-line
 
   // TWEET BUTTON CUSTOM TEXT
   // tweetText: '',
-  // twitterRelatedAccounts: ['authors_account_here', 'ftdata'], // Twitter lists these as suggested accounts to follow after a user tweets (do not include @)
+  twitterRelatedAccounts: ['bryanhimself', 'ian_bott_artist', 'officeofjane', 'LaurenLeatherby', 'ftdata'], // Twitter lists these as suggested accounts to follow after a user tweets (do not include @)
 
   // Fill out the Facebook/Twitter metadata sections below if you want to
   // override the General social options above
@@ -91,7 +91,7 @@ export default () => ({ // eslint-disable-line
   //ADVERTISING
   ads: {
     // ad unit hierarchy makes ads more granular. Start with ft.com and /companies /markets /world as appropriate to your story
-    gptAdunit: 'ft.com/companies/european',
+    gptAdunit: 'ft.com/world/asia-pacific',
     // granular targeting is optional and will be specified by the ads team
     dftTargeting: '',
   },
