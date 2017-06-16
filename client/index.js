@@ -234,7 +234,7 @@ function drawCharts() {
 
 
   d3.select('.rotating-globes__drag-overlay')
-    .call(d3.drag().on('start', startGlobeDrag).on('drag', onGlobeDrag))
+    .call(d3.drag().on('start', startGlobeDrag).on('drag', onGlobeDrag));
 }
 
 drawCharts();
