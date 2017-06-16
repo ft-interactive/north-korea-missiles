@@ -224,8 +224,9 @@ function drawCharts() {
   };
 
   function onGlobeDrag() {
-    const { x, y } = d3.event;
-    projection.rotate([-x, -y]);
+    const { dx, dy } = d3.event;
+    const [x, y] = projection.rotate();
+    projection.rotate([x + dx, y + dy]);
     positionLabels();
     d3.selectAll('.rotating-globes svg path.land').attr('d', path);
     d3.selectAll('.rotating-globes svg path.city-labels').attr('d', r => path(circle.center(r.coordinates).radius(0.5)()));
