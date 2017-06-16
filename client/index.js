@@ -219,6 +219,8 @@ function drawCharts() {
     positionLabels();
   });
 
+  let secondT;
+
   const startGlobeDrag = () => {
     t.stop();
     secondT.stop();
@@ -233,8 +235,6 @@ function drawCharts() {
     d3.selectAll('.rotating-globes svg path.city-labels').attr('d', r => path(circle.center(r.coordinates).radius(0.5)()));
     d3.selectAll('.rotating-globes svg path.range').attr('d', r => path(circle.center(pyongyang).radius(r)()));
   }
-
-  let secondT;
 
   function startSpinningAgain() {
     secondT = d3.timer(() => {
