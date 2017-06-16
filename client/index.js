@@ -225,7 +225,7 @@ function drawCharts() {
 
   function onGlobeDrag() {
     const { x, y } = d3.event;
-    projection.rotate([x, y]);
+    projection.rotate([-x, -y]);
     positionLabels();
     d3.selectAll('.rotating-globes svg path.land').attr('d', path);
     d3.selectAll('.rotating-globes svg path.city-labels').attr('d', r => path(circle.center(r.coordinates).radius(0.5)()));
@@ -234,7 +234,7 @@ function drawCharts() {
 
 
   d3.select('.rotating-globes__drag-overlay')
-    .call(d3.drag().on('start', startGlobeDrag).on('drag', onGlobeDrag));
+    .call(d3.drag().on('start', startGlobeDrag).on('drag', onGlobeDrag))
 }
 
 drawCharts();
