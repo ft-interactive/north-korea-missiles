@@ -221,6 +221,7 @@ function drawCharts() {
 
   const startGlobeDrag = () => {
     t.stop();
+    secondT.stop();
   };
 
   function onGlobeDrag() {
@@ -233,9 +234,25 @@ function drawCharts() {
     d3.selectAll('.rotating-globes svg path.range').attr('d', r => path(circle.center(pyongyang).radius(r)()));
   }
 
+  let secondT;
+
+  function startSpinningAgain() {
+    secondT = d3.timer(() => {
+      // get current time
+      const dt = Date.now() - time;
+
+      projection.rotate([rotate[0] + velocity[0] * dt, rotate[1] + velocity[1] * dt]);
+
+      // // update cities position = redraw
+      d3.selectAll('path.land').attr('d', path);
+      d3.selectAll('path.city-labels').attr('d', r => path(circle.center(r.coordinates).radius(0.5)()));
+      d3.selectAll('path.range').attr('d', r => path(circle.center(pyongyang).radius(r)()));
+      positionLabels();
+    });
+  }
 
   d3.select('.rotating-globes__drag-overlay')
-    .call(d3.drag().on('start', startGlobeDrag).on('drag', onGlobeDrag));
+    .call(d3.drag().on('start', startGlobeDrag).on('drag', onGlobeDrag).on('end', startSpinningAgain))
 }
 
 drawCharts();
