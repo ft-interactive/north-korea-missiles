@@ -34,7 +34,7 @@ export default async () => {
 
   */
 
-  console.log(data);
+  // console.log(data);
 
   return {
     ...d,
