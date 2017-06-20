@@ -121,7 +121,7 @@ function spinDatGlobe(config) {
     .attr('class', 'subhed-text')
     .text(config.subhed);
 
-  d3.json('http://mbostock.github.io/d3/talk/20111018/world-countries.json', (error, collection) => {
+  d3.json('world-countries.json', (error, collection) => {
     svg.selectAll('path')
             .data(collection.features)
             .enter().append('path')
