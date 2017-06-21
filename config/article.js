@@ -9,7 +9,7 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2017-06-15T05:00:00Z'),
+  publishedDate: new Date('2017-06-28T05:00:00Z'),
 
   headline: 'North Korea: A rising threat',
 
@@ -79,7 +79,7 @@ export default () => ({ // eslint-disable-line
   // override the General social options above
 
   // TWITTER METADATA (for Twitter cards)
-  // twitterImage: '',
+  twitterImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8502626190-ua6uo.jpg?source=ig&width=300&height=300&gravity=faces',
   // twitterHeadline: '',
   // twitterDescription: '',
 
