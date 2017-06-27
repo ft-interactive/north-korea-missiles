@@ -5,18 +5,14 @@
 
 {% markdown %}
 {{data.intro}}
-{% endmarkdown %}
 
-{% include "graphics/timeline.html" %}
-
-{% markdown %}
 {{data.impact}}
 {% endmarkdown %}
 
 <div class="o-grid-container">
   <div class="o-grid-row">
     <div data-o-grid-colspan="12" class="rotating-globes">
-      <div class="o-typography-lead">Minimum and maximum ranges of North Korea's most powerful missiles</div>
+      <div class="o-typography-lead">Estimated ranges of North Korea’s two most powerful missiles</div>
       <div class="rotating-globes__drag-overlay"></div>
       <!-- <div class="o-typography-lead--small">Estimated minimum and maximum reach in km</div> -->
       <div data-o-grid-colspan="S12 M12 L6 XL6" id='kn-08' class='globe-div'></div>
@@ -26,6 +22,13 @@
   </div>
 </div>
 
+{% markdown %}
+{{data.policy}}
+
+{{data.shortrange}}
+{% endmarkdown %}
+
+{% include "graphics/timeline.html" %}
 
 <!-- {# START MID AD SLOT
     You can move this wherever it works best in your page's design.
@@ -35,23 +38,20 @@
 {# END MID AD SLOT #} -->
 
 {% markdown %}
-{{data.policy}}
+{{data.hwasong}}
 {% endmarkdown %}
 
 {% include "graphics/short-range.html" %}
 
 {% markdown %}
-{{data.shortrange}}
-{% endmarkdown %}
+{{data.hwasong2}}
 
-{% markdown %}
-{{data.hwasong}}
+{{data.taepodong}}
 {% endmarkdown %}
 
 {% include "graphics/long-range.html" %}
 
 {% markdown %}
-{{data.taepodong}}
 
 <!-- <figure class="graphic graphic-b-1 graphic-pad-1">
   <img alt="" src="https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2Fc4bf0be4-7c15-11e4-a7b8-00144feabdc0?source=ig&fit=scale-down&width=700"></img>
@@ -61,8 +61,6 @@
 </figure> -->
 
 {{data.kn15}}
-
-{{data.missilesend}}
 {% endmarkdown %}
 
 {% include "graphics/map-ranges.html" %}
