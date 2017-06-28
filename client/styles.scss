@@ -56,3 +56,32 @@
   user-select: none;
 
 }
+
+
+.globes-legend {
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items:center;
+}
+
+.legend-item .square {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 8px;
+  text-align: center;
+}
+
+.lightred {
+  background-color: #ea3c13;
+  opacity: 0.5;
+}
+
+.darkred {
+  background-color: #ea3c13;
+  opacity: 0.8;
+}
