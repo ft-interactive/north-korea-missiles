@@ -18,7 +18,7 @@ const globes = {
 };
 
 
-const width = 300;
+const width = 290;
 const height = 330;
 
 // set projection type and paremetes
