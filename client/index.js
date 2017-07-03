@@ -100,8 +100,6 @@ function spinDatGlobe(config) {
 
   const g = svg.append('g');
 
-   // t();
-
   // draw the sphere
   g.append('path')
      .datum({ type: 'Sphere' })
@@ -175,6 +173,8 @@ function spinDatGlobe(config) {
   });
 }
 
+// label function inspired by Derek Watkins' faux-3d shaded globe
+// http://bl.ocks.org/dwtkns/4686432
 function positionLabels() {
   // select all the labels and transform them
   d3.selectAll('.label')
@@ -205,14 +205,16 @@ function drawCharts() {
   spinDatGlobe(globes.Taepodong2);
 
   const t = d3.timer(() => {
+
+    // spinning function from Patrick Stotz's spinnning globe with glowing city markers
+    // http://bl.ocks.org/PatrickStotz/1f19b3e4cb848100ffd7
     // get current time
     const dt = Date.now() - time;
 
     // get the new position from modified projection function
     projection.rotate([rotate[0] + velocity[0] * dt, rotate[1] + velocity[1] * dt]);
 
-
-    // // update cities position = redraw
+    // update cities position = redraw
     d3.selectAll('path.land').attr('d', path);
     d3.selectAll('path.city-labels').attr('d', r => path(circle.center(r.coordinates).radius(0.5)()));
     d3.selectAll('path.range').attr('d', r => path(circle.center(pyongyang).radius(r)()));
@@ -238,12 +240,10 @@ function drawCharts() {
 
   function startSpinningAgain() {
     secondT = d3.timer(() => {
-      // get current time
       const dt = Date.now() - time;
 
       projection.rotate([rotate[0] + velocity[0] * dt, rotate[1] + velocity[1] * dt]);
 
-      // // update cities position = redraw
       d3.selectAll('path.land').attr('d', path);
       d3.selectAll('path.city-labels').attr('d', r => path(circle.center(r.coordinates).radius(0.5)()));
       d3.selectAll('path.range').attr('d', r => path(circle.center(pyongyang).radius(r)()));
