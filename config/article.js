@@ -41,8 +41,8 @@ export default () => ({ // eslint-disable-line
   // if array of authors, url is optional
   byline: [
     { name: 'Bryan Harris', url: 'https://www.ft.com/stream/authorsId/Q0ItQkg2Nzg5MA==-QXV0aG9ycw==' },
-    { name: 'Ian Bott', url: 'https://www.ft.com/stream/authorsId/ODExZWY1ZWItNzFhNy00NzdmLWE1OWEtNzYxZjcyMTkxYmNj-QXV0aG9ycw=='},
-    { name: 'Jane Pong', url: 'https://www.ft.com/stream/authorsId/YWMxN2YzMGMtMmE4Zi00ZjNmLTliMjQtYmI4ZGU1ZDkxZjBh-QXV0aG9ycw=='},
+    { name: 'Ian Bott', url: 'https://www.ft.com/ian-bott'},
+    { name: 'Jane Pong', url: 'https://www.ft.com/jane-pong'},
     { name: 'Lauren Leatherby', url: 'https://www.ft.com/lauren-leatherby'}
   ],
 
