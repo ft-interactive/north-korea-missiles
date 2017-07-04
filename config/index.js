@@ -8,7 +8,7 @@ export default async () => {
   const flags = await getFlags();
   const onwardJourney = await getOnwardJourney();
 
-  const data = await bertha.get('1_odV0FXiWDQc3XCH2ZHG7FA9GYs4uE-9qok36dhO28U', ['text|object'], {republish: true}).then((data) => {
+  const data = await bertha.get('1_odV0FXiWDQc3XCH2ZHG7FA9GYs4uE-9qok36dhO28U', ['text|object'], {republish: false}).then((data) => {
     return data.text;
   });
 
