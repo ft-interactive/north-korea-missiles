@@ -9,7 +9,7 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2017-06-30T05:00:00Z'),
+  publishedDate: new Date('2017-07-04T15:23:17Z'),
 
   headline: 'North Korea: A rising threat',
 
@@ -41,8 +41,8 @@ export default () => ({ // eslint-disable-line
   // if array of authors, url is optional
   byline: [
     { name: 'Bryan Harris', url: 'https://www.ft.com/stream/authorsId/Q0ItQkg2Nzg5MA==-QXV0aG9ycw==' },
-    { name: 'Ian Bott', url: 'https://www.ft.com/stream/authorsId/ODExZWY1ZWItNzFhNy00NzdmLWE1OWEtNzYxZjcyMTkxYmNj-QXV0aG9ycw=='},
-    { name: 'Jane Pong', url: 'https://www.ft.com/stream/authorsId/YWMxN2YzMGMtMmE4Zi00ZjNmLTliMjQtYmI4ZGU1ZDkxZjBh-QXV0aG9ycw=='},
+    { name: 'Ian Bott', url: 'https://www.ft.com/ian-bott'},
+    { name: 'Jane Pong', url: 'https://www.ft.com/jane-pong'},
     { name: 'Lauren Leatherby', url: 'https://www.ft.com/lauren-leatherby'}
   ],
 
