@@ -89,3 +89,25 @@
 #g-nokorea-nuclear-timeline-Artboard_2 #g-ai1-2 p.g-aiPstyle0 {
   white-space: nowrap;
 }
+
+.responsive-graphic__long-range,
+.responsive-graphic__map-ranges {
+  img {
+    width: 100%;
+  }
+
+
+  &--l {
+    display: none;
+  }
+
+  @include oGridRespondTo(M) {
+    &--l {
+      display: block;
+    }
+
+    &--s {
+      display: none;
+    }
+  }
+}

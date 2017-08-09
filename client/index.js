@@ -1,19 +1,19 @@
 import * as d3 from 'd3';
 
 const globes = {
-  KN08: {
-    selectorId: '#kn-08',
-    globeName: 'KN-08',
-    subhed: '(in development)',
-    minDistance: 5500,
-    maxDistance: 11500,
-  },
-  Taepodong2: {
-    selectorId: '#taeopodong-2',
-    globeName: 'Taepodong-2',
+  Hwasong12: {
+    selectorId: '#hwasong-12',
+    globeName: 'Hwasong-12',
     subhed: '(operational)',
-    minDistance: 4000,
-    maxDistance: 15000,
+    // minDistance: 4500,
+    maxDistance: 4500,
+  },
+  Hwasong14: {
+    selectorId: '#hwasong-14',
+    globeName: 'Hwasong-14',
+    subhed: '(in development)',
+    // minDistance: 8000,
+    maxDistance: 10000,
   },
 };
 
@@ -127,18 +127,18 @@ function spinDatGlobe(config) {
             .attr('fill', '#b2b2b2')
             .attr('id', d => d.properties.name.split(' ').join('_'));
 
-    svg.append('g')
-      .attr('class', 'missile-range')
-    .selectAll('path')
-      .data(d3.range(
-        0,
-        ((config.minDistance / 6371) * (180 / Math.PI)),
-        ((config.minDistance / 6371) * (180 / Math.PI)) - 1,
-    ))
-    .enter()
-    .append('path')
-      .attr('d', r => path(circle.center(pyongyang).radius(r)()))
-      .attr('class', 'range');
+    // svg.append('g')
+    //   .attr('class', 'missile-range')
+    // .selectAll('path')
+    //   .data(d3.range(
+    //     0,
+    //     ((config.minDistance / 6371) * (180 / Math.PI)),
+    //     ((config.minDistance / 6371) * (180 / Math.PI)) - 1,
+    // ))
+    // .enter()
+    // .append('path')
+    //   .attr('d', r => path(circle.center(pyongyang).radius(r)()))
+    //   .attr('class', 'range');
 
     svg.append('g')
       .attr('class', 'missile-range')
@@ -201,8 +201,8 @@ function positionLabels() {
 }
 
 function drawCharts() {
-  spinDatGlobe(globes.KN08);
-  spinDatGlobe(globes.Taepodong2);
+  spinDatGlobe(globes.Hwasong12);
+  spinDatGlobe(globes.Hwasong14);
 
   const t = d3.timer(() => {
 

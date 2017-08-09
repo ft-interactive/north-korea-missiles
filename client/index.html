@@ -13,18 +13,18 @@
   <div class="o-grid-row">
     <div data-o-grid-colspan="12" class="rotating-globes">
       <div class="o-typography-lead">Estimated ranges of North Korea’s two most powerful missiles</div>
-      <div data-o-grid-colspan="12" class="globes-legend">
+      <!-- <div data-o-grid-colspan="12" class="globes-legend">
         <div data-o-grid-colspan="S6 M6 L3 XL3" class="legend-item">
           <div class="square darkred"></div>Lower limit
         </div>
         <div data-o-grid-colspan="S6 M6 L3 XL3" class="legend-item">
           <div class="square lightred"></div>Upper limit
         </div>
-      </div>
+      </div> -->
       <div class="rotating-globes__drag-overlay"></div>
       <!-- <div class="o-typography-lead--small">Estimated minimum and maximum reach in km</div> -->
-      <div data-o-grid-colspan="S12 M12 L6 XL6" id='kn-08' class='globe-div'></div>
-      <div data-o-grid-colspan="S12 M12 L6 XL6" id='taeopodong-2' class='globe-div'></div>
+      <div data-o-grid-colspan="S12 M12 L6 XL6" id='hwasong-12' class='globe-div'></div>
+      <div data-o-grid-colspan="S12 M12 L6 XL6" id='hwasong-14' class='globe-div'></div>
       <div class="restyled-source">Sources: CSIS; FT research</div>
     </div>
   </div>
@@ -49,13 +49,18 @@
 {{data.hwasong}}
 {% endmarkdown %}
 
-{% include "graphics/short-range.html" %}
+{# {% include "graphics/short-range.html" %} #}
 
 {% markdown %}
 {{data.taepodong}}
 {% endmarkdown %}
 
-{% include "graphics/long-range.html" %}
+{#{% include "graphics/long-range.html" %}#}
+
+<figure class="responsive-graphic__long-range">
+  <img class="responsive-graphic__long-range--l" src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8497705938-zhmaw.png?source=ig-images" />
+  <img class="responsive-graphic__long-range--s" src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8497705938-99tlb.png?source=ig-images" />
+</figure>
 
 {% markdown %}
 
@@ -69,7 +74,12 @@
 {{data.kn15}}
 {% endmarkdown %}
 
-{% include "graphics/map-ranges.html" %}
+{#{% include "graphics/map-ranges.html" %}#}
+
+<figure class="responsive-graphic__map-ranges">
+  <img class="responsive-graphic__map-ranges--l" src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8497705936-88g3s.png?source=ig-images" />
+  <img class="responsive-graphic__map-ranges--s" src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8497705935-24qk3.png?source=ig-images" />
+</figure>
 
 {% markdown %}
 {{data.nuclear}}
