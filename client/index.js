@@ -8,12 +8,12 @@ const globes = {
     minDistance: 5500,
     maxDistance: 11500,
   },
-  Taepodong2: {
-    selectorId: '#taeopodong-2',
-    globeName: 'Taepodong-2',
-    subhed: '(operational)',
-    minDistance: 4000,
-    maxDistance: 15000,
+  Hwasong14: {
+    selectorId: '#hwasong-14',
+    globeName: 'Hwasong-14',
+    subhed: '(in development)',
+    minDistance: 8000,
+    maxDistance: 10000,
   },
 };
 
@@ -202,7 +202,7 @@ function positionLabels() {
 
 function drawCharts() {
   spinDatGlobe(globes.KN08);
-  spinDatGlobe(globes.Taepodong2);
+  spinDatGlobe(globes.Hwasong14);
 
   const t = d3.timer(() => {
 
