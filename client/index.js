@@ -83,7 +83,7 @@ const cities = [
   {
     coordinates: [-46.6333, -23.5505],
     country: 'Brazil',
-    label: 'Sao Paolo',
+    label: 'São Paulo',
     city: 'Sao_Paolo',
     yLocation: -5,
   },
