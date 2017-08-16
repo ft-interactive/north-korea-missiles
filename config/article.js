@@ -17,8 +17,8 @@ export default () => ({ // eslint-disable-line
   summary: "Pyongyang's development of missiles and nuclear weapons rings alarms in Washington",
 
   topic: {
-    name: 'North Korea',
-    url: 'https://www.ft.com/north-korea',
+    name: 'North Korea nuclear tensions',
+    url: 'https://www.ft.com/stream/6537532f-83a3-30e8-bdf4-a30eefe0fe5f',
   },
 
   relatedArticle: {
