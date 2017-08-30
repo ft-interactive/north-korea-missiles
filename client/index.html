@@ -36,7 +36,7 @@
 {{data.shortrange}}
 {% endmarkdown %}
 
-{% include "graphics/timeline.html" %}
+{#{% include "graphics/timeline.html" %}#}
 
 <!-- {# START MID AD SLOT
     You can move this wherever it works best in your page's design.
@@ -44,6 +44,11 @@
     https://financial-times.github.io/o-ads/docs/developer-guide/display #}
 {% if ads %}{{ macros.middleAd() }}{% endif %}
 {# END MID AD SLOT #} -->
+
+<figure class="responsive-graphic__long-range">
+  <img class="responsive-graphic__long-range--l" src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8495936064-ftyia.png?source=ig" />
+  <img class="responsive-graphic__long-range--s" src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8495936064-9daty.png?source=ig" />
+</figure>
 
 {% markdown %}
 {{data.hwasong}}
